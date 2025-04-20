@@ -1,10 +1,8 @@
 # Documentation
 
-Cette documentation décrit la plupart des connaissances que nous avons actuellement sur la calculatrice Numworks.
+Cette documentation rassemble l'essentiel de nos connaissances actuelles sur la calculatrice Numworks.
 
-Si vous souhaitez télécharger des applications, merci d'aller sur la [Documentation d'Utilisateur](../guide/).
-
-Sinon, voilà ce qui est documenté pour le moment, séparé en différentes catégories :
+Pour télécharger des applications, merci de visiter la [Documentation Utilisateur](../guide/).
 
 ## Catégories
 
