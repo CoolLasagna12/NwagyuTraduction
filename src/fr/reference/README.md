@@ -1,19 +1,18 @@
 # Documentation
 
-This documentation is trying to describe everything we know about the NumWorks
-calculator.
+Cette documentation décrit la plupart des connaissances que nous avons actuellement sur la calculatrice Numworks.
 
-If you are looking for apps, please go to the [User Documentation](../guide/).
+Si vous souhaitez télécharger des applications, merci d'aller sur la [Documentation d'Utilisateur](../guide/).
 
-Here's what is documented at the time, separated under different categories :
+Sinon, voilà ce qui est documenté pour le moment, séparé en différentes catégories :
 
-## Categories
+## Catégories
 
-### [External apps](apps/)
+### [Applications Externes](apps/)
 
-- [Creating your own application](apps/creating-application.md)
-- [Accessing storage](apps/storage.md)
-- [On/Off and Home keys](apps/onoff-home.md)
+- [Comment créer son application](apps/creating-application.md)
+- [Accéder au stockage](apps/storage.md)
+- [Touches On/Off et Menu](apps/onoff-home.md)
 - [Syscalls](apps/syscalls.md)
 
 ### [Firmware](firmware/)
@@ -23,9 +22,9 @@ Here's what is documented at the time, separated under different categories :
 - [Bootloader](firmware/bootloader.md)
 - [Kernel](firmware/kernel.md)
 - [Userland](firmware/userland.md)
-- [Addresses and structures](firmware/addresses-structures.md)
+- [Adresses et structures](firmware/addresses-structures.md)
 
-### [Others](others/)
+### [Autres](others/)
 
-- [Communication with the computer (DFU)](others/dfu.md)
-- [Downloading Epsilon from NumWorks' website](others/downloading-epsilon.md)
+- [Communication avec un ordinateur (DFU)](others/dfu.md)
+- [Télécharger Epsilon depuis le site de Numworks](others/downloading-epsilon.md)
