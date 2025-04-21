@@ -50,7 +50,7 @@ Rust est un langage moderne et sans problèmes de mémoire, épargnant beaucoup 
 
 ### Créer votre application
 
-:::tabs
+::: tabs
 @tab C
 NumWorks a une template d'application en C sur leur repo GitHub  [numworks/epsilon-sample-app-c](https://github.com/numworks/epsilon-sample-app-c).
 
