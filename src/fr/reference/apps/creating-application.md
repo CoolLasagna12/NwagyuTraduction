@@ -10,77 +10,53 @@ Avant de créer votre application, vous devez choisir le système d'exploitation
 
 #### Upsilon et Omega (extapp)
 
-Les applications externes ont été créées par Omega. En effet, Omega API a été conçu pour KhiCAS mais a évolué pour faire tourner d'autres applications externes.
+Les applications externes ont été créées par Omega. À l'origine, Omega API a été conçu pour KhiCAS mais a évolué pour faire tourner d'autres applications externes.
 
-Omega external apps stay during exam mode, run faster based on my benchmarks and
-their behaviour is often known by the community.
+Les applications externes d'Omega ne sont pas supprimées à l'activation du mode examen. Elles seraient plus rapides et leur API peut être modifiée et étendue.
 
-Upsilon was later forked from Omega after Epsilon 16 was released as Omega
-maintainers didn't wanted to fight against NumWorks in a cat-and-mouse game.
-Khi also appeared as another fork of Omega created by Bernard Parisse, KhiCAS
-and xcas developer. He added several features to the external apps API, notably
-the ability to write flash.
-Upsilon continued adding new features to Omega, including merging back Khi
-improvements.
+Upsilon a été créé après la sortie d'Epsilon 16, car les mainteneurs ne voulaient pas entrer dans un jeu du chat et de la souris avec Numworks. Un autre fork d'Omega, Khi, a été créé par Bernard Parisse, le développeur de KhiCAS et xcas. Il a ajouté plusieurs fonctionnalités à l'API des applications externes, comme la possibilité d'écrire sur la Flash. Upsilon, de son côté, a continué à ajouter de nouvelles fonctionnalités, intégrant notamment les améliorations apportés par Khi.
 
-`extapp` is the prefix used by the external apps API on Omega, hence the name.
+`extapp` est le préfixe utilisé par l'API des applications externes sur Omega.
 
-Documentation about Omega/Upsilon (extapp) is available on
-[Upsilon-External](https://github.com/UpsilonNumworks/Upsilon-External/blob/master/docs/new-app.md)
-repo
+La documentation sur les extapp d'Omega/Upsilon est disponible sur le repo d'[Upsilon External](https://github.com/UpsilonNumworks/Upsilon-External/blob/master/docs/new-app.md).
 
 #### Epsilon (NWA/EADK)
 
-Epsilon 16 (the first locked Epsilon version) released the NWA external apps
-system to redeem themselves from the community as they removed all the freedom
-from NumWorks calculators.
+Epsilon 16 (la première version fermée d'Epsilon) a ajouté le support des applications externes (sous le format NWA) pour se donner bonne conscience auprès de la communauté, après avoir supprimé toute liberté sur les calculatrices Numworks (qui fut leur argument de vente).
 
-However, their system only allow a restricted set of feature compared to Omega.
-Here are the keys differences:
+Toutefois, leur système d'applications externes comporte de nombreuses restrictions face à celui d'Omega :
+- Les applications externes ne sont pas disponibles lors du mode examen
+- Les applications externes sont supprimées lors du reset de la calculatrice (crash inclus)
+- L'accès au stockage n'est pas officiellement supporté (mais une réimplémentation a été créée [ici](storage.md))
+- Seul Numworks a le contrôle sur l'API, donc la modifier n'est pas toujours possible (en désactivant les [boutons On/Off et Menu](onoff-home.md) par exemple)
 
-- External apps are not available on exam mode
-- External apps are deleted when reseting the calculator, including crashes
-- Storage access is not officially supported (but an unofficial
-  reimplementation exists, see [Accessing storage])
-- Only NumWorks has the control over the API, so extending it is not always
-  possible (disabling [On/Off and Home keys], for example)
-  <!-- TODO: Link to the page -->
+EADK (Epsilon App Developement Kit) est donc le nom donné par Numworks à l'API utilisé par les applications NWA.
 
-EADK is the name given by NumWorks to the API used by NWA applications.
+## Créer une application Upsilon
 
-## Creating an Upsilon application
+La documentation sur Omega et Upsilon (extapp) est disponible sur le repo d'[Upsilon External](https://github.com/UpsilonNumworks/Upsilon-External/blob/master/docs/new-app.md).
 
-Documentation about Omega/Upsilon (extapp) is available on
-[Upsilon-External](https://github.com/UpsilonNumworks/Upsilon-External/blob/master/docs/new-app.md)
-repo
+Les applications d'Upsilon sont, pour la plupart, rétro-compatibles avec Omega si elles n'utilisent pas l'API spécifique à Upsilon, même s'il n'y a aucune vraie raison d'utiliser Omega plutôt qu'Upsilon dans tous les cas.
 
-Upsilon application are mostly backward-compatible with Omega if you don't use
-Upsilon-specific API, but there is no real reason to use Omega instead of
-Upsilon anyway.
+## Créer une application NWA/EADK
 
-## Creating a NWA/EADK application
+### Choisir un langage de programmation
 
-### Choosing a programming language
+Les applications NWA sont écrites dans des langagés compilés, comme le C, le C++, le Rust, le Zig, et tant d'autres.
 
-NWA apps are written in compiled languages, so C, C++, Rust and Zig.
+Le C et le C++ sont très similaires et leur différence principale est que le C++ est orienté-objet, avec un support des classes, permettant aux codes d'être plus organisés et plus agréables à construire. La syntaxe du C est aussi utilisable en C++, donc, sauf si vous avez une raison très spécifique de ne pas vouloir utiliser du C++, il est préférable au C.
 
-C and C++ are very similar, the main difference between C and C++ is that C++ is
-object-oriented, with class support, allowing easier and more organized code.
-C syntax is also usable on C++, so unless you have a very specific reason to not
-use C++, C++ is preferable.
+Rust est un langage moderne et sans problèmes de mémoire, épargnant beaucoup de temps de débogage, et des performances semblables au C et au C++. Le Rust possède également un écosystème de librairie pour ne pas avoir à réinventer la roue.
 
-Rust is a modern memory-safe language, saving a lot of time during debugging
-with performance comparable to C/C++. Rust also feature a library ecosystem to
-avoid reimplementing the wheel.
-
-### Creating your app
+### Créer votre application
 
 ::: tabs
 @tab C
-NumWorks is providing a C application template on the GitHub repo
-[numworks/epsilon-sample-app-c](https://github.com/numworks/epsilon-sample-app-c)
+NumWorks a une template d'application en C sur leur repo GitHub  [numworks/epsilon-sample-app-c](https://github.com/numworks/epsilon-sample-app-c).
 
-To use it, follow the instructions on the README.
+Pour l'utiliser, suivez les instructions dans le README.
+
+
 
 Instructions to install the toolchain (choose the one corresponding to your
 Linux distribution, or adapt the commands if it's not listed):
